@@ -4,6 +4,9 @@ import { Locator, Page } from "@playwright/test";
 import { BasePage } from "./BasePage";
 
 export class HomePage extends BasePage {
+    getHomePageTitle(): any {
+        throw new Error('Method not implemented.');
+    }
 
     //private Locators: 
     private readonly logoutLink: Locator;

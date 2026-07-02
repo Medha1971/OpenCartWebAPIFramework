@@ -10,7 +10,7 @@ let homePage: HomePage;
 test.beforeEach(async ({ page }) => {
     loginPage = new LoginPage(page);
     await loginPage.goToLoginPage();
-    await loginPage.doLogin('pwtestbatch@open.com', 'pw123');
+    await loginPage.doLogin('harshsingh@gmail.com', 'Test@123');
     homePage = new HomePage(page);
 });
 
