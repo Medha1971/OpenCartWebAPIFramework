@@ -177,7 +177,7 @@ pipeline {
                         string(credentialsId: 'qa-base-url', variable: 'BASE_URL'),
                         string(credentialsId: 'api-base-url', variable: 'API_BASE_URL')
                     ]) {
-                        sh '''
+                        bat '''
                             ENV=qa \
                             BASE_URL=$BASE_URL \
                             USERNAME=$USERNAME \
@@ -194,9 +194,9 @@ pipeline {
             }
             post {
                 always {
-                    sh 'mkdir -p reports-qa/html reports-qa/allure'
-                    sh 'cp -r qa-tests/reports/html-report/* reports-qa/html/ || true'
-                    sh 'allure generate qa-tests/allure-results --clean -o reports-qa/allure || true'
+                    bat 'mkdir -p reports-qa/html reports-qa/allure'
+                    bat 'cp -r qa-tests/reports/html-report/* reports-qa/html/ || true'
+                    bat 'allure generate qa-tests/allure-results --clean -o reports-qa/allure || true'
                     publishHTML(target: [
                         reportName: 'QA Regression - PW HTML Report',
                         reportDir: 'reports-qa/html',
