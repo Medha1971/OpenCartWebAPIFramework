@@ -3,6 +3,11 @@
 import { ApiHelper } from '../../src/api/ApiHelper';
 import { test, expect } from '../../src/fixtures/apifixtures';
 
+console.log("ENV =", process.env.ENV);
+console.log("API_BASE_URL =", process.env.API_BASE_URL);
+console.log("API_TOKEN loaded =", !!process.env.API_TOKEN);
+console.log("APPUSERNAME loaded =", !!process.env.APPUSERNAME);
+
 const TOKEN = process.env.API_TOKEN!;
 let AUTH_HEADER = {
     Authorization: `Bearer ${TOKEN}`,

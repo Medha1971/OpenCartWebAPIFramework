@@ -9,7 +9,7 @@ export class LoginPage extends BasePage {
     private readonly password: Locator;
     private readonly loginBtn: Locator;
     private readonly forgottenPasswordLink: Locator;
-    private readonly logo: Locator;
+    //private readonly logo: Locator;
     private readonly loginErrorMessage: Locator;
 
     //const... of the class: init the locators
@@ -19,7 +19,7 @@ export class LoginPage extends BasePage {
         this.password = page.getByRole('textbox', { name: 'Password' });
         this.loginBtn = page.getByRole('button', { name: 'Login' });
         this.forgottenPasswordLink = page.getByRole('link', { name: 'Forgotten Password' }).first();
-        this.logo = page.getByAltText('naveenopencart');
+        //this.logo = page.getByAltText('naveenopencart');
         this.loginErrorMessage = page.locator('.alert.alert-danger.alert-dismissible');
     };
 
@@ -49,6 +49,5 @@ export class LoginPage extends BasePage {
 
 
 }
-
 
 
